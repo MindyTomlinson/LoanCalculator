@@ -24,38 +24,29 @@
 	<header><h1 class="title green">Loan Calculator</h1></header>
 		<div class="wrapper">
 	<div class="row">
-		<div class="col-2 col-left">
+		<div class="col-left">
 			<form>
-				<div class="form-row">
-					<h2 class="section-label">Enter Loan Data</h2></div>
-				<div class="form-row">
-					<label for="amount">Amount of the loan ($):</label>
-					<input id="amount" type="number" onchange="calculate();" autofocus></div>
-				<div class="form-row">
-					<label for="apr">Annual interest (%):</label>
-					<input id="apr" type="number" onchange="calculate();"></div>
-				<div class="form-row">
-					<label for="years">Repayment period (years):</label>
-					<input id="years" type="number" onchange="calculate();"></div>
-				<div class="form-row">
-					<label for="zipcode">Zipcode (to find lenders):</label>
-					<input id="zipcode" type="number" onchange="calculate();"></div>
-				<div class="form-row">
-					<button id="calc-button" class="button" onclick="calculate();">Calculate</button></div>
-				<div class="form-row">
-					<h2 class="top-pad">Approximate Payments</h2></div>
-				<div class="form-row">
-					<p class="output o-label">Monthly payment:</p>
-					<p class="output o-value" id="payment"></p></div>
-				<div class="form-row">
-					<p class="output o-label">Total payment:</p>
-					<p class="output o-value" id="total"></p></div>
-				<div class="form-row">
-					<p class="output o-label">Total interest:</p>
-					<p class="output o-value" id="interest"></p></div>
+				<h2>Enter Loan Data</h2>
+				<label for="amount">Amount of the loan ($):</label>
+				<input id="amount" class="wide-input" type="number" onchange="calculate();" autofocus>
+				<label for="apr">Annual interest (%):</label>
+				<input id="apr" type="number" onchange="calculate();">
+				<label for="years">Repayment period (years):</label>
+				<input id="years" type="number" onchange="calculate();">
+				<label for="zipcode">Zipcode (to find lenders):</label>
+				<input id="zipcode" type="number" onchange="calculate();">
+				<button id="calc-button" class="button" onclick="calculate();">Calculate</button>
+				<h2 class="top-pad">Approximate Payments</h2>
+				<p class="output">Monthly payment: 
+					<span class="output-value" id="payment"></span></p>
+				<p class="output">Total payment: 
+					<span class="output-value" id="total"></span></p>
+				<p class="output">Total interest: 
+					<span class="output-value" id="interest"></span></p>
 			</form>
 		</div>
-		<div class="col-2">
+		<div class="col-right">
+			<h2>Loan Balance Plot</h2>
 			<canvas id="graph"></canvas>
 		</div>
 	</div>

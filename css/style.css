@@ -26,23 +26,23 @@ html, body {
 }
 
 .col-left {
+	float: left;
 	padding-right: 5%;
+	width: 40%;
 }
 
-.col-2 {
+.col-right {
 	float: left;
-	width: 50%;
+	width: 60%;
 }
 
 
 header {
 	width: 100%;
-	margin: 0 0 30px 0;
-	padding: 30px 0 10px 0;
+	padding: 20px 0;
 }
  
 header > h1 {
-	margin: 0;
 	padding: 0 10%;
 	font-size: 3rem;
 }
@@ -54,17 +54,17 @@ header > h1 {
 h1, h2 {
 	font-variant: small-caps;
 	color: #40FD65;
-	letter-spacing: 50%;
+}
+ 
+h1 {
 	margin: 0;
 }
 
-.top-pad {
-	padding-top: 20px;
+h2 {
+	margin: 20px 0;
 }
 
-.output {
-	display: inline-block;
-}
+
 /** { border: 1px solid #ff0000;*/
 
 p {
@@ -72,73 +72,53 @@ p {
 	padding: 0;
 }
 
-.form-row {
-	margin: 0 0 15px 0;
-	clear: both;
-	overflow: hidden;
+form > label, form > input {
+	display: block;
 }
-
-form > div > label {
-	width: 60%;
-	float: left;
-	padding-right: 10px;
+form > label {
+	margin-bottom: 4px;
 	font-size: 110%;
-/*	text-align: right;*/
 }
 
-form > div > input {
-	width: 40%;
+form > input {
+	margin-bottom: 12px;
+	width: 80%;
 	font-size: 120%;
-	float: left;
 	border-top: 2px solid #666;
 	border-left: 2px solid #666;
 	border-bottom: 1px solid #CCC;
 	border-right: 1px solid #CCC;
 }
 
-form > div > button {
-	margin-left: 45%;
+/*form > .wide-input {
+	width: 70%;
+}*/
+
+form > button {
 	font-size: 1.2rem;
+	margin: 10px 0;
 }
 
-@media (max-width: 960px) {
-	form > div > label {
-		display: block;
-		width: 100%;
-		float: none;
-		margin: 0 0 5px 0;
-	}
-	form > div > input {
-		width: 60%;
-		max-width: 220px;
-		float: none;
-	}
-	form > div > button {
-		margin-left: 0;
-	}
-
-	.col-2 {
+@media (max-width: 900px) {
+	.col-right, .col-left {
 		width: 100%;
 	}
+
+	form > input {
+		width: 50%;
+	}
 }
 
-.fl-row {
-	display: flex;
-	flex-flow: row nowrap;
+@media (max-width: 500px) {
+	form > input {
+		width: 80%;
+	}
 }
-
-.fl-col {
-	flex: 1 1 auto;
-}
-
-.fl-col:not(:last-child) {
-	margin-right: 20px;
-}
-
 
 #graph {
 	background-color: #FFF;
 	width: 100%;
 	height: auto;
+	margin: 10px 0 0 0;
 }
 
