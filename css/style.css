@@ -1,0 +1,144 @@
+/* Apply a natural box layout model to all elements, but allowing components to change */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/* Allows for full-viewport-height elements on 
+page. Alternative is to use height: 100vh on 
+individual elements */
+html, body {
+   height: 100%;
+   width: 100%;
+   margin: 0;
+   padding: 0;
+   font-family: 'Open Sans', sans-serif;
+   background-color: #23395B;
+   color: #CFFFF1;
+   font-size: 100%;
+}
+
+.row {
+	clear: both;
+	overflow: hidden;
+}
+
+.col-left {
+	padding-right: 5%;
+}
+
+.col-2 {
+	float: left;
+	width: 50%;
+}
+
+
+header {
+	width: 100%;
+	margin: 0 0 30px 0;
+	padding: 30px 0 10px 0;
+}
+ 
+header > h1 {
+	margin: 0;
+	padding: 0 10%;
+	font-size: 3rem;
+}
+
+.wrapper {
+	padding: 0 10%;
+}
+
+h1, h2 {
+	font-variant: small-caps;
+	color: #40FD65;
+	letter-spacing: 50%;
+	margin: 0;
+}
+
+.top-pad {
+	padding-top: 20px;
+}
+
+.output {
+	display: inline-block;
+}
+/** { border: 1px solid #ff0000;*/
+
+p {
+	margin: 0;
+	padding: 0;
+}
+
+.form-row {
+	margin: 0 0 15px 0;
+	clear: both;
+	overflow: hidden;
+}
+
+form > div > label {
+	width: 60%;
+	float: left;
+	padding-right: 10px;
+	font-size: 110%;
+/*	text-align: right;*/
+}
+
+form > div > input {
+	width: 40%;
+	font-size: 120%;
+	float: left;
+	border-top: 2px solid #666;
+	border-left: 2px solid #666;
+	border-bottom: 1px solid #CCC;
+	border-right: 1px solid #CCC;
+}
+
+form > div > button {
+	margin-left: 45%;
+	font-size: 1.2rem;
+}
+
+@media (max-width: 960px) {
+	form > div > label {
+		display: block;
+		width: 100%;
+		float: none;
+		margin: 0 0 5px 0;
+	}
+	form > div > input {
+		width: 60%;
+		max-width: 220px;
+		float: none;
+	}
+	form > div > button {
+		margin-left: 0;
+	}
+
+	.col-2 {
+		width: 100%;
+	}
+}
+
+.fl-row {
+	display: flex;
+	flex-flow: row nowrap;
+}
+
+.fl-col {
+	flex: 1 1 auto;
+}
+
+.fl-col:not(:last-child) {
+	margin-right: 20px;
+}
+
+
+#graph {
+	background-color: #FFF;
+	width: 100%;
+	height: auto;
+}
+

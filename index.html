@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>Loan Calculator</title>
+	<meta name="description" content="Loan calculator from example in chapter 1 of Javascript: The Definitive Guide">
+	<meta name="author" content="Mindy Tomlinson">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/style.css">
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:700,600,400' rel='stylesheet' type='text/css'>
+</head>
+<body>
+	<!--
+		This is an HTML table with <input> elements that allow the user
+		to enter data and <span> elements in which the program can display
+		its results.
+		These elements have ids like "interest" and "years". These ids are
+		used in the JS code. Note that some of the input elements define
+		"onchange" or "onclick" event handlers. These specify strings of
+		JS code to be executed when the user enters data or clicks.
+	-->
+
+	<header><h1 class="title green">Loan Calculator</h1></header>
+		<div class="wrapper">
+	<div class="row">
+		<div class="col-2 col-left">
+			<form>
+				<div class="form-row">
+					<h2 class="section-label">Enter Loan Data</h2></div>
+				<div class="form-row">
+					<label for="amount">Amount of the loan ($):</label>
+					<input id="amount" type="number" onchange="calculate();" autofocus></div>
+				<div class="form-row">
+					<label for="apr">Annual interest (%):</label>
+					<input id="apr" type="number" onchange="calculate();"></div>
+				<div class="form-row">
+					<label for="years">Repayment period (years):</label>
+					<input id="years" type="number" onchange="calculate();"></div>
+				<div class="form-row">
+					<label for="zipcode">Zipcode (to find lenders):</label>
+					<input id="zipcode" type="number" onchange="calculate();"></div>
+				<div class="form-row">
+					<button id="calc-button" class="button" onclick="calculate();">Calculate</button></div>
+				<div class="form-row">
+					<h2 class="top-pad">Approximate Payments</h2></div>
+				<div class="form-row">
+					<p class="output o-label">Monthly payment:</p>
+					<p class="output o-value" id="payment"></p></div>
+				<div class="form-row">
+					<p class="output o-label">Total payment:</p>
+					<p class="output o-value" id="total"></p></div>
+				<div class="form-row">
+					<p class="output o-label">Total interest:</p>
+					<p class="output o-value" id="interest"></p></div>
+			</form>
+		</div>
+		<div class="col-2">
+			<canvas id="graph"></canvas>
+		</div>
+	</div>
+	<h2 class="top-pad">Sponsors</h2>
+	<p>Apply for your loan with one of these fine lenders:</p>
+	<div id="js-lenders"></div>
+	</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
