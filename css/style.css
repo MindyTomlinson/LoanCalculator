@@ -43,12 +43,12 @@ header {
 }
  
 header > h1 {
-	padding: 0 10%;
+	padding: 0 5%;
 	font-size: 3rem;
 }
 
 .wrapper {
-	padding: 0 10%;
+	padding: 0 5%;
 }
 
 h1, h2 {
@@ -82,17 +82,13 @@ form > label {
 
 form > input {
 	margin-bottom: 12px;
-	width: 80%;
+	width: 100%;
 	font-size: 120%;
 	border-top: 2px solid #666;
 	border-left: 2px solid #666;
 	border-bottom: 1px solid #CCC;
 	border-right: 1px solid #CCC;
 }
-
-/*form > .wide-input {
-	width: 70%;
-}*/
 
 form > button {
 	font-size: 1.2rem;
@@ -116,7 +112,7 @@ form > button {
 	}
 }
 
-@media (max-width: 500px) {
+@media (max-width: 600px) {
 	form > input {
 		width: 100%;
 	}
