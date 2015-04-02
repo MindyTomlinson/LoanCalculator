@@ -99,6 +99,13 @@ form > button {
 	margin: 10px 0;
 }
 
+#graph {
+	background-color: #FFF;
+	width: 100%;
+	height: auto;
+	margin: 10px 0 0 0;
+}
+
 @media (max-width: 900px) {
 	.col-right, .col-left {
 		width: 100%;
@@ -111,14 +118,8 @@ form > button {
 
 @media (max-width: 500px) {
 	form > input {
-		width: 80%;
+		width: 100%;
 	}
 }
 
-#graph {
-	background-color: #FFF;
-	width: 100%;
-	height: auto;
-	margin: 10px 0 0 0;
-}
 
