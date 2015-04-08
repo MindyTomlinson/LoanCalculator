@@ -11,54 +11,67 @@
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:700,600,400' rel='stylesheet' type='text/css'>
 </head>
 <body>
-	<div class="container">
-	  <h1>Loan Calculator</h1>
-	  <div class="row">
-	    <div class="col col-main">
-	      <h2>Enter Loan Data</h2>
-	      <label for="amount" class="label">Amount of the loan</label>
-	      <div class="input-wrapper">
-	        <span class="input-addon">$</span>
-	        <input id="amount" class="input-field" type="text" value="100,000">
-	      </div>
-	      <label for="apr" class="label">Annual interest rate</label>
-	      <div class="input-wrapper">
-	        <input id="apr" class="input-field" type="text" value="5">
-	        <span class="input-addon">%</span>
-	      </div>
-	      <label for="years" class="label">Repayment period</label>
-	      <div class="input-wrapper">
-	        <input id="years" class="input-field" type="text" value="20">
-	        <span class="input-addon">years</span>
-	      </div>
-	      <label for="zipcode" class="label">Zipcode (to find lenders)</label>
-	      <div class="input-wrapper">
-	        <input id="zipcode" class="input-field" type="text">
-	      </div>
-	      <button onclick="calculate();">Calculate</button>
+<div class="container">
+  <h1>Loan Calculator</h1>
+  <div class="row">
+    <div class="col col-main">
+      <h2>Enter Loan Data</h2>
+      <label for="amount" class="label">Amount of the loan</label>
+      <div class="input-wrapper">
+        <span class="input-addon">$</span>
+        <input id="amount" class="input-field" type="text" value="100,000">
+      </div>
+      <label for="apr" class="label">Annual interest rate</label>
+      <div class="input-wrapper">
+        <input id="apr" class="input-field" type="text" value="5">
+        <span class="input-addon">%</span>
+      </div>
+      <label for="years" class="label">Repayment period</label>
+      <div class="input-wrapper">
+        <input id="years" class="input-field" type="text" value="20">
+        <span class="input-addon">years</span>
+      </div>
+      <label for="zipcode" class="label">Zipcode (to find lenders)</label>
+      <div class="input-wrapper">
+        <input id="zipcode" class="input-field" type="text">
+      </div>
+      <button onclick="calculate();">Calculate</button>
 
-	    </div>
-	    <div class="col">
-	      <h2>Payments</h2>
-	      <div class="output-wrapper">
-	        <p class="label">Monthly payment</p>
-	        <p class="output-value">$<span id="payment"></span></p>
-	      </div>
-	      <div class="output-wrapper">
-	        <p class="label">Total payments</p>
-	        <p class="output-value">$<span id="total"></span></p>
-	      </div>
-	      <div class="output-wrapper">
-	        <p class="label">Total interest payments</p>
-	        <p class="output-value">$<span id="totalinterest"></span></p>
-	      </div>
-	    </div>
-	  </div>
-	  <h2>Balance vs. Payments</h2>
-	  <canvas id="graph"></canvas>
-	  <h2>Sponsors</h2>
-	  <p class="">Apply for a loan with one of these fine lenders:</p>
-	</div>
+    </div>
+    <div class="col">
+      <h2>Payments</h2>
+      <div class="output-wrapper">
+        <p class="label">Monthly payment</p>
+        <p class="output-value">$<span id="payment"></span></p>
+      </div>
+      <div class="output-wrapper">
+        <p class="label">Total payments</p>
+        <p class="output-value">$<span id="total"></span></p>
+      </div>
+      <div class="output-wrapper">
+        <p class="label">Total interest payments</p>
+        <p class="output-value">$<span id="totalinterest"></span></p>
+      </div>
+    </div>
+  </div>
+  <h2>Balance vs. Payments</h2>
+  <canvas id="graph"></canvas>
+  <div class="legend">
+    <div class="legend-item">
+      <div class="legend-swatch" id="total-interest-payments-swatch"></div>
+      <div class="legend-label">Total Interest Payments</div>
+    </div>
+    <div class="legend-item">
+      <div class="legend-swatch" id="total-equity-swatch"></div>
+      <div class="legend-label">Total Equity</div>
+    </div>
+    <div class="legend-item">
+      <div class="legend-swatch" id="loan-balance-swatch"></div>
+      <div class="legend-label">Loan Balance</div>
+    </div>
+  </div>
+  <footer></footer>
+</div>
 <script src="js/script.js"></script>
 </body>
 </html>
