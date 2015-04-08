@@ -11,50 +11,54 @@
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:700,600,400' rel='stylesheet' type='text/css'>
 </head>
 <body>
-	<!--
-		This is an HTML table with <input> elements that allow the user
-		to enter data and <span> elements in which the program can display
-		its results.
-		These elements have ids like "interest" and "years". These ids are
-		used in the JS code. Note that some of the input elements define
-		"onchange" or "onclick" event handlers. These specify strings of
-		JS code to be executed when the user enters data or clicks.
-	-->
+	<div class="container">
+	  <h1>Loan Calculator</h1>
+	  <div class="row">
+	    <div class="col col-main">
+	      <h2>Enter Loan Data</h2>
+	      <label for="amount" class="label">Amount of the loan</label>
+	      <div class="input-wrapper">
+	        <span class="input-addon">$</span>
+	        <input id="amount" class="input-field" type="text" value="100,000">
+	      </div>
+	      <label for="apr" class="label">Annual interest rate</label>
+	      <div class="input-wrapper">
+	        <input id="apr" class="input-field" type="text" value="5">
+	        <span class="input-addon">%</span>
+	      </div>
+	      <label for="years" class="label">Repayment period</label>
+	      <div class="input-wrapper">
+	        <input id="years" class="input-field" type="text" value="20">
+	        <span class="input-addon">years</span>
+	      </div>
+	      <label for="zipcode" class="label">Zipcode (to find lenders)</label>
+	      <div class="input-wrapper">
+	        <input id="zipcode" class="input-field" type="text">
+	      </div>
+	      <button onclick="calculate();">Calculate</button>
 
-	<header><h1 class="title green">Loan Calculator</h1></header>
-		<div class="wrapper">
-	<div class="row">
-		<div class="col-left">
-			<form>
-				<h2>Enter Loan Data</h2>
-				<label for="amount">Amount of the loan ($):</label>
-				<input id="amount" type="number" onchange="calculate();" autofocus>
-				<label for="apr">Annual interest (%):</label>
-				<input id="apr" type="number" onchange="calculate();">
-				<label for="years">Repayment period (years):</label>
-				<input id="years" type="number" onchange="calculate();">
-				<label for="zipcode">Zipcode (to find lenders):</label>
-				<input id="zipcode" type="number" onchange="calculate();">
-				<button id="calc-button" class="button" onclick="calculate();">Calculate</button>
-				<h2 class="top-pad">Approximate Payments</h2>
-				<p class="output">Monthly payment: 
-					<span class="output-value" id="payment"></span></p>
-				<p class="output">Total payment: 
-					<span class="output-value" id="total"></span></p>
-				<p class="output">Total interest: 
-					<span class="output-value" id="interest"></span></p>
-			</form>
-		</div>
-		<div class="col-right">
-			<h2>Loan Balance vs. Interest & Equity</h2>
-			<canvas id="graph"></canvas>
-		</div>
+	    </div>
+	    <div class="col">
+	      <h2>Payments</h2>
+	      <div class="output-wrapper">
+	        <p class="label">Monthly payment</p>
+	        <p class="output-value">$<span id="payment"></span></p>
+	      </div>
+	      <div class="output-wrapper">
+	        <p class="label">Total payments</p>
+	        <p class="output-value">$<span id="total"></span></p>
+	      </div>
+	      <div class="output-wrapper">
+	        <p class="label">Total interest payments</p>
+	        <p class="output-value">$<span id="totalinterest"></span></p>
+	      </div>
+	    </div>
+	  </div>
+	  <h2>Balance vs. Payments</h2>
+	  <canvas id="graph"></canvas>
+	  <h2>Sponsors</h2>
+	  <p class="">Apply for a loan with one of these fine lenders:</p>
 	</div>
-	<h2 class="top-pad">Sponsors</h2>
-	<p>Apply for your loan with one of these fine lenders:</p>
-	<div id="js-lenders"></div>
-	</div>
-
 <script src="js/script.js"></script>
 </body>
 </html>

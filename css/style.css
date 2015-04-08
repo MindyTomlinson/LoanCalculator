@@ -1,121 +1,165 @@
-/* Apply a natural box layout model to all elements, but allowing components to change */
+.input-wrapper {
+  display: flex;
+  flex-flow: row nowrap;
+  box-shadow: inset 0px 1px 2px #222;
+  background-color: #39537b;
+  border-radius: 4px;
+  margin-top: 0.2em;
+  margin-bottom: 1.2em;
+}
+
+.input-field {
+  flex: 1;
+  border: 0;
+  font-size: 1.1em;
+  font-weight: 600;
+}
+
+.input-wrapper:hover {
+  box-shadow: inset 1px 2px 2px #222;
+  transition: box-shadow 0.1s ease;
+}
+
+input:focus, button:focus {
+  outline:none;
+}
+
+.input-field {
+  flex: 1;
+  border: 0;
+  font-size: 1.1em;
+  font-weight: 600;
+}
+
+.input-field,
+.input-addon {
+  padding: 0.5em 0.75em;
+  color: #89DDFF;
+  letter-spacing: 1px;
+}
+
+.input-field:not(first-child) {
+    border-left: 1px solid rgba(34,34,34,0.1);
+}
+.input-field:not(last-child) {
+    border-right: 1px solid rgba(34,34,34,0.1);
+}
+
+.input-addon {
+  font-variant: small-caps;
+}
+
+input {
+  background-color: transparent;
+}
+
+button {
+  background-color: #89DDFF;
+  border: 0;
+  border-radius: 4px;
+  box-shadow: 0px 2px 4px #222;
+  font-size: 1.2em;
+  font-variant: small-caps;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  color: #23395B;
+  padding: 0.5em 0.8em;
+  margin-top: 0.6em;
+  margin-bottom: 1em;
+}
+
+button:hover {
+  box-shadow: 3px 6px 6px #222;
+  transition: box-shadow 0.05s ease;
+  cursor: pointer;
+}
+
+.label {
+  font-variant: small-caps;
+  font-size: 1.1em;
+  letter-spacing: 1px;
+}
+
+.output-value {
+  color: #89DDFF;
+  letter-spacing: 1px;
+  font-weight: 600;
+  font-size: 2em;
+  margin-bottom: 0.6em;
+}
+
+canvas {
+  width: 100%;
+  height: auto;
+  background-color: #F7F7F7;
+}
+
+.container {
+  margin: auto;
+  width: 80%;
+  max-width: 620px;
+}
+
+.row {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.col-main {
+  flex: 1;
+}
+
+.col:first-child {
+  padding-right: 3em;
+}
+
+h2 {
+  color: #40FD65;
+  font-size: 1.6em;
+  font-variant: small-caps;
+  letter-spacing: 1px;
+  margin: 0;
+  padding-top: 1em;
+  padding-bottom: 0.2em;
+}
+
+h1 {
+  color: #40FD65;
+  font-size: 3.6em;
+  font-variant: small-caps;
+  letter-spacing: 1px;
+  margin: 0;
+  padding-top: 0.4em;
+}
+
+p {
+  margin: 0;
+}
+
+@media (max-width: 540px) {
+  .row {
+    flex-flow: column;
+  }
+  .col:first-child {
+    padding-right: 0;
+  }
+  h1 {
+    font-size: 2.4em;
+  }
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: #23395B;
+  font-family: 'Open Sans', sans-serif;
+  color: #72AAD0;
+}
+
 html {
   box-sizing: border-box;
 }
 *, *:before, *:after {
   box-sizing: inherit;
 }
-
-/* Allows for full-viewport-height elements on 
-page. Alternative is to use height: 100vh on 
-individual elements */
-html, body {
-   height: 100%;
-   width: 100%;
-   margin: 0;
-   padding: 0;
-   font-family: 'Open Sans', sans-serif;
-   background-color: #23395B;
-   color: #CFFFF1;
-   font-size: 100%;
-}
-
-.row {
-	clear: both;
-	overflow: hidden;
-}
-
-.col-left {
-	float: left;
-	padding-right: 5%;
-	width: 40%;
-}
-
-.col-right {
-	float: left;
-	width: 60%;
-}
-
-
-header {
-	width: 100%;
-	padding: 20px 0;
-}
- 
-header > h1 {
-	padding: 0 5%;
-	font-size: 3rem;
-}
-
-.wrapper {
-	padding: 0 5%;
-}
-
-h1, h2 {
-	font-variant: small-caps;
-	color: #40FD65;
-}
- 
-h1 {
-	margin: 0;
-}
-
-h2 {
-	margin: 20px 0;
-}
-
-
-/** { border: 1px solid #ff0000;*/
-
-p {
-	margin: 0;
-	padding: 0;
-}
-
-form > label, form > input {
-	display: block;
-}
-form > label {
-	margin-bottom: 4px;
-	font-size: 110%;
-}
-
-form > input {
-	margin-bottom: 12px;
-	width: 100%;
-	font-size: 120%;
-	border-top: 2px solid #666;
-	border-left: 2px solid #666;
-	border-bottom: 1px solid #CCC;
-	border-right: 1px solid #CCC;
-}
-
-form > button {
-	font-size: 1.2rem;
-	margin: 10px 0;
-}
-
-#graph {
-	background-color: #FFF;
-	width: 100%;
-	height: auto;
-	margin: 10px 0 0 0;
-}
-
-@media (max-width: 900px) {
-	.col-right, .col-left {
-		width: 100%;
-	}
-
-	form > input {
-		width: 50%;
-	}
-}
-
-@media (max-width: 600px) {
-	form > input {
-		width: 100%;
-	}
-}
-
-
